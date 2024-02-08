@@ -1,0 +1,71 @@
+include<stdio.h>
+#include<conio.h>
+void main()
+{
+
+     float units,cunits,c1,c2,c3,c4,total,ctotal;
+     puts("enter:");
+     scanf("%f",&units);
+     
+     cunits=units;
+     
+     if(cunits>200)
+     {
+         c1=160;
+         cunits=cunits-200;
+         
+         if(cunits>100)
+         {
+             c2=90;
+             cunits=cunits-100;
+             if(cunits>0)
+             {
+                 c3=cunits;
+                 total=c1+c2+c3;
+                 
+                 if(total>=400) 
+                 {
+                     c4=(total*15)/100;
+                     ctotal=total+c4;
+                 }
+                 else
+                 {
+                     ctotal=total;
+                     c4=0;
+                 }
+             }
+         }
+         
+         else
+         {
+             c2=(cunits*90)/100;
+             total =c1+c2;
+             c3=c4=0;
+         }
+     }
+     
+     else
+     {
+        if(cunits==200)
+        {
+            c1=160;
+            total=c1;
+            c2=c3=c4=0;
+        } 
+        else
+        {
+            c1=(cunits*80)/100;
+            total =c1;
+            c2=c3=c4=0;
+        }
+     }
+     
+     printf("Bill:--\n\n");
+     printf("200 units 80 pai. charge : %f\n",c1);
+     printf("100 units 90 pai. charge : %f\n",c2);
+     printf("Above 300 units 1 rupee charge : %f\n",c3);
+     printf("Total charge : %f\n",total);
+     printf("Additional 15%% charge as over 400 = %f\n",c4);
+     printf("Net Rupees to pay : %f\n",ctotal);
+     
+}
